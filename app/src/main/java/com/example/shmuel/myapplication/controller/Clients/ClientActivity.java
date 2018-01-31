@@ -41,8 +41,8 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
-        MyActionModeCallbackClient callback=new MyActionModeCallbackClient();
-        actionMode=startActionMode(callback);
+       // MyActionModeCallbackClient callback=new MyActionModeCallbackClient();
+       // actionMode=startActionMode(callback);
 
         Intent intent =getIntent();
         name=intent.getStringExtra("name");
@@ -65,7 +65,7 @@ public class ClientActivity extends AppCompatActivity {
         phoneclient.setText(phone);
         emailclient.setText(email);
         credit.setText(creditCardNum);
-        actionMode.setTitle(name+" "+lastName);
+//        actionMode.setTitle(name+" "+lastName);
     }
     public class MyActionModeCallbackClient implements ActionMode.Callback{
 
@@ -177,7 +177,7 @@ public class ClientActivity extends AppCompatActivity {
             TabFragments.clientsTab.updateView2();
             Toast.makeText(ClientActivity.this,
                     "client deleted", Toast.LENGTH_SHORT).show();
-            actionMode.finish();
+            //actionMode.finish();
             progDailog.dismiss();
         }
     }
